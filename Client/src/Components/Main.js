@@ -5,6 +5,7 @@ import Cart from './Cart'
 import Login from './Authentication/Login'
 import Register from './Authentication/Register';
 import PrivateRoutes from '../Utils/PrivateRoutes'
+import UserDetails from './User/UserDetails'
 const Main = () => {
     const approuter=createBrowserRouter([
         {
@@ -19,7 +20,8 @@ const Main = () => {
           element: <PrivateRoutes />,
       children: [
         { path: '/', element: <Landing /> },
-        { path: '/cart', element: <Cart /> }
+        { path: '/cart', element: <Cart /> },
+        { path: '/user-details', element: <UserDetails /> }
         // Add other protected routes here
       ]
         }

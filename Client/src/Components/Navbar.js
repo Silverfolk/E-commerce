@@ -5,6 +5,8 @@ import { removeUser } from '../Store/userSlice';
 import { deleteCart } from '../Store/cartSlice';
 import { FaShoppingCart } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
+import { FaUser } from "react-icons/fa";
+
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -20,8 +22,7 @@ const Navbar = () => {
   return (
     <div className='flex flex-row justify-between pl-4 pr-4 pt-2 bg-blue-900'>
       {/* Logo */}
-      {/* <FaShoppingCart /> */}
-      {/* <IoLogOut/> */}
+
       <div>
         <h1 onClick={() => navigate('/')} className='text-white font-bold text-4xl mb-2'>
           Ecommerce
@@ -32,6 +33,12 @@ const Navbar = () => {
       <div className='flex flex-row justify-around'>
         {user ? (
           <div>
+            <button
+              className='text-white font-bold text-2xl mb-2   rounded-lg pl-2 pr-2 pb-1'
+              onClick={() => navigate('/user-details')}
+            >
+             <FaUser/>
+            </button>
             <button
               className='text-white font-bold text-2xl mb-2   rounded-lg pl-2 pr-2 pb-1'
               onClick={logout}
